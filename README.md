@@ -1,16 +1,56 @@
-# flutter_curd
+# CRUD Code Test
 
-A new Flutter project.
+Please read each note very carefully!
+Feel free to add/change project structure to a clean architecture to your view.
+and if you are not able to work on FrontEnd project, you can add a Swagger UI
+in a new Front project.
 
-## Getting Started
+Create a simple CRUD application with that implements the below model:
 
-This project is a starting point for a Flutter application.
+```
+Customer {
+	Firstname
+	Lastname
+	DateOfBirth
+	PhoneNumber
+	Email
+	BankAccountNumber
+}
+```
 
-A few resources to get you started if this is your first Flutter project:
+## Practices and patterns (Must)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- [TDD](https://en.wikipedia.org/wiki/Test-driven_development)
+- [DDD](https://en.wikipedia.org/wiki/Domain-driven_design)
+- [BDD](https://en.wikipedia.org/wiki/Behavior-driven_development): [Acceptance Test](https://en.wikipedia.org/wiki/Acceptance_testing)
+- Clean git commits that shows your work progress.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Clean Architecture (Must)
+
+<img src="./clean_architecture.png" height="420"  alt="clean Architecture"/>
+
+### Validations (Must)
+
+- During Create; validate the phone number to be a valid *mobile* number only (You can
+  use [Google LibPhoneNumber](https://github.com/google/libphonenumber) to validate number at the backend).
+
+- A Valid email and a valid bank account number must be checked before submitting the form.
+
+- Customers must be unique in database: By `Firstname`, `Lastname` and `DateOfBirth`.
+
+- Email must be unique in the database.
+
+### Storage (Must)
+
+- Use database of choice to store data on the mobile.
+
+- Store the phone number in a database with minimized space storage (choose `varchar`/`string`, or `Uint64` whichever
+  store less space).
+
+### Submit your result
+
+Please clone this repository in a new github repository in private mode and share with ID: `mason-chase` in private mode
+on github.com and then create
+a [PR](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
+that only shows what you have changed in the project, it means you must make sure that my commits are not erased from
+the history.
